@@ -1,0 +1,7 @@
+{
+  "name": "Creabra 面料智能数据库与服装匹配",
+  "description": "Creabra P0 Demo - 面料多模态导入、同款归组、AI提取审核、面料墙与双向智能服装匹配系统",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
