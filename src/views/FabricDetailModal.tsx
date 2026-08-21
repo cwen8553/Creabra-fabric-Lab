@@ -897,7 +897,7 @@ export const FabricDetailModal: React.FC<FabricDetailModalProps> = ({
                 <div className="bg-white rounded-2xl border border-zinc-200 p-5 shadow-xs space-y-4">
                   <h4 className="text-xs font-bold text-zinc-950 flex items-center gap-1.5">
                     <FileText className="w-4 h-4 text-zinc-900" />
-                    多模态采集凭证与原始色卡照片
+                    原始资料与色卡照片
                   </h4>
                   {fabric.sources && fabric.sources.length > 0 ? (
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

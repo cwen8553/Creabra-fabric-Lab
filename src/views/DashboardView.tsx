@@ -196,10 +196,10 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               <div>
                 <h3 className="font-bold text-zinc-900 text-sm flex items-center gap-2">
                   <Cpu className="w-4 h-4 text-zinc-700" />
-                  提取与归组任务流水线
+                  资料整理进度
                 </h3>
                 <p className="text-xs text-zinc-500 mt-0.5">
-                  全自动处理网页切片、色卡图片与 Excel 清单字段解析与关联
+                  查看网页、色卡和 Excel 等样例资料的当前状态
                 </p>
               </div>
               <button
@@ -214,8 +214,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             <div className="grid grid-cols-5 gap-2 p-3 bg-zinc-50 rounded-xl border border-zinc-200/80 mb-4">
               {[
                 { label: '1. 文件上传', status: 'done', count: '86 份' },
-                { label: '2. 文本字段提取', status: 'done', count: '82 成功' },
-                { label: '3. 同款归组', status: 'done', count: '54 自动 / 14 确认' },
+                { label: '2. 资料整理', status: 'done', count: '82 完成' },
+                { label: '3. 同款候选', status: 'done', count: '54 待看 / 14 已确认' },
                 { label: '4. 人工核对', status: 'active', count: '进行中' },
                 { label: '5. 正式入库', status: 'waiting', count: '229 款' },
               ].map((stage, idx) => (

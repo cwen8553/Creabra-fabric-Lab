@@ -1418,7 +1418,7 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
                   </div>
                 </div>
                 <p className="text-[11px] text-zinc-500">
-                  支持多重组合打标（原色卡包含对应工艺时自动选中，可点击增删）：
+                  支持多重组合打标（参考原色卡信息，请人工确认并增删）：
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {SPECIAL_CRAFT_OPTIONS.map((craft, cIdx) => {

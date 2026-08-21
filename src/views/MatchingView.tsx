@@ -284,7 +284,7 @@ export const MatchingView: React.FC<MatchingViewProps> = ({
         if (fabComp.includes('莱赛尔') || fabComp.includes('天丝') || fabComp.includes('棉') || fabComp.includes('真丝') || fabComp.includes('莫代尔')) {
           compScore = 24;
           compMatch = true;
-          confirmedEvidence.push('纯天然/天丝纤维与轻薄衬衫品类匹配度极高');
+          confirmedEvidence.push('纯天然/天丝纤维可作为轻薄衬衫的候选材料');
         } else if (fabComp.includes('锦纶') && fabric.weaveStructure?.value === '斜纹') {
           compScore = 14;
           usageRisks.push('机能锦纶偏硬挺，制作轻盈垂坠衬衫穿着体感偏闷');
@@ -336,7 +336,7 @@ export const MatchingView: React.FC<MatchingViewProps> = ({
       // AI semantic bridge inference if no exact direct match
       if (!compMatch) {
         compScore = 18;
-        aiInferences.push(`AI 语义对齐：该面料的【${fabric.weaveStructure?.value || '织造结构'}】在挺括与亲肤度上可适度替代`);
+        aiInferences.push(`适配提示：该面料的【${fabric.weaveStructure?.value || '织造结构'}】可作为挺括度与亲肤度方面的候选`);
       }
 
       // 2. Functions & Performance (Max 20)
@@ -463,8 +463,8 @@ export const MatchingView: React.FC<MatchingViewProps> = ({
     }
 
     return {
-      name: `AI 概念企划面料：${garmentForm.category} 专用定制规格`,
-      rationale: `基于当前服装企划要求【${garmentForm.category} / ${garmentForm.silhouette} / 预算 ≤¥${garmentForm.targetPriceMax}】，现有库存中最接近款仍有微量缺口，系统自动反向生成理想采购参数。`,
+      name: `非库存概念建议：${garmentForm.category} 候选规格`,
+      rationale: `当前需求为【${garmentForm.category} / ${garmentForm.silhouette} / 预算 ≤¥${garmentForm.targetPriceMax}】。若现有库存不足，以下内容仅作为非库存询盘方向，需由面料专业人员和供应商确认。`,
       idealComposition,
       idealWeightGsm,
       idealWeave,
@@ -589,7 +589,7 @@ export const MatchingView: React.FC<MatchingViewProps> = ({
               </h2>
               <div className="flex items-center gap-2">
                 <span className="text-xs text-zinc-500 font-sans">
-                  系统将基于 6 维权重模型在 <strong className="text-zinc-950 font-mono">{fabrics.length}</strong> 款库中即时评分排序
+                  在 <strong className="text-zinc-950 font-mono">{fabrics.length}</strong> 款样例面料中查看接近的候选
                 </span>
               </div>
             </div>
@@ -668,7 +668,7 @@ export const MatchingView: React.FC<MatchingViewProps> = ({
                             <Wand2 className="w-3.5 h-3.5 text-zinc-300 shrink-0" />
                             使用自定义品类："{categorySearchQuery.trim()}"
                           </span>
-                          <span className="text-[10px] px-1.5 py-0.5 bg-white/20 rounded-md shrink-0">AI 识别</span>
+                          <span className="text-[10px] px-1.5 py-0.5 bg-white/20 rounded-md shrink-0">自定义</span>
                         </button>
                       )}
 
@@ -786,7 +786,7 @@ export const MatchingView: React.FC<MatchingViewProps> = ({
                             <Wand2 className="w-3.5 h-3.5 text-zinc-300 shrink-0" />
                             使用自定义版型："{silhouetteSearchQuery.trim()}"
                           </span>
-                          <span className="text-[10px] px-1.5 py-0.5 bg-white/20 rounded-md shrink-0">AI 适配</span>
+                          <span className="text-[10px] px-1.5 py-0.5 bg-white/20 rounded-md shrink-0">自定义</span>
                         </button>
                       )}
 
@@ -895,12 +895,12 @@ export const MatchingView: React.FC<MatchingViewProps> = ({
 
             </div>
 
-            {/* AI Semantic Alignment Status Banner */}
+            {/* Current requirement summary */}
             <div className="pt-2 flex items-center gap-2 text-[11px] text-zinc-600 bg-zinc-50 border border-zinc-100 p-2.5 rounded-2xl">
               <Sparkles className="w-3.5 h-3.5 text-zinc-900 shrink-0" />
-              <span className="font-bold text-zinc-950">AI 语义对齐：</span>
+              <span className="font-bold text-zinc-950">当前需求：</span>
               <span className="truncate">
-                当前企划【<strong className="text-zinc-900">{garmentForm.category}</strong> / <strong className="text-zinc-900">{garmentForm.silhouette}</strong>】，系统已自动映射核心纺织特性（{semanticAnalysis.detectedPillars}），全库动态评分中。
+                【<strong className="text-zinc-900">{garmentForm.category}</strong> / <strong className="text-zinc-900">{garmentForm.silhouette}</strong>】，重点查看：{semanticAnalysis.detectedPillars}。
               </span>
             </div>
           </div>
@@ -914,17 +914,17 @@ export const MatchingView: React.FC<MatchingViewProps> = ({
                   最接近的真实库存面料推荐
                 </h2>
                 <p className="text-xs text-zinc-500 mt-0.5 font-sans">
-                  根据企划需求智能匹配推荐
+                  根据当前企划条件展示样例结果
                 </p>
               </div>
               <span className="text-xs text-zinc-400 font-mono">
-                已在 {fabrics.length} 款主档中完成多维加权排序
+                共 {fabrics.length} 款样例面料
               </span>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {matchResults.slice(0, 3).map((res) => {
-                const { fabric, scoreBreakdown, recommendationLevel } = res;
+                const { fabric, recommendationLevel } = res;
 
                 return (
                   <div
@@ -959,12 +959,9 @@ export const MatchingView: React.FC<MatchingViewProps> = ({
                         </h3>
                       </div>
 
-                      {/* Score Circle */}
+                      {/* Prototype result label; do not expose internal sample scores */}
                       <div className="text-right shrink-0">
-                        <span className="text-2xl font-bold font-mono text-zinc-950">
-                          {scoreBreakdown.totalScore}
-                        </span>
-                        <span className="text-xs text-zinc-400 font-mono"> /100</span>
+                        <span className="text-[11px] text-zinc-500">样例结果</span>
                       </div>
                     </div>
 
@@ -1002,7 +999,7 @@ export const MatchingView: React.FC<MatchingViewProps> = ({
                       {res.hardConstraintsViolated.length > 0 ? (
                         <div className="p-2.5 bg-zinc-100 border border-zinc-300 rounded-xl space-y-1">
                           <p className="text-zinc-950 font-bold text-[11px] flex items-center gap-1">
-                            <ShieldAlert className="w-3.5 h-3.5 text-zinc-950" /> 阻断硬性条件：
+                            <ShieldAlert className="w-3.5 h-3.5 text-zinc-950" /> 暂不建议使用：
                           </p>
                           <p className="text-zinc-700 text-[11px]">{res.hardConstraintsViolated[0]}</p>
                         </div>
@@ -1051,7 +1048,7 @@ export const MatchingView: React.FC<MatchingViewProps> = ({
                     {aiConceptSpec.name}
                   </h3>
                   <p className="text-[11px] text-zinc-400 mt-0.5">
-                    基于服装企划诉求反向推导的理想参数模型
+                    根据当前企划整理的非库存候选方向
                   </p>
                 </div>
               </div>
@@ -1103,7 +1100,7 @@ export const MatchingView: React.FC<MatchingViewProps> = ({
                 className="px-3.5 py-1.5 bg-white hover:bg-zinc-200 text-zinc-950 rounded-xl text-xs font-bold shrink-0 cursor-pointer flex items-center gap-1.5 transition-colors"
               >
                 {copiedPrompt ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
-                <span>{copiedPrompt ? '已复制' : '复制询盘 Prompt'}</span>
+                <span>{copiedPrompt ? '已复制' : '复制询盘内容'}</span>
               </button>
             </div>
           </div>
@@ -1418,11 +1415,9 @@ export const MatchingView: React.FC<MatchingViewProps> = ({
                 <div className="flex items-center justify-between">
                   <h3 className="text-sm font-bold text-zinc-950 flex items-center gap-2">
                     <Sparkles className="w-4 h-4 text-zinc-900" />
-                    <span>服装开发匹配建议与适用场景分析</span>
+                    <span>服装开发建议与适用场景</span>
                   </h3>
-                  <span className="text-xs text-zinc-500 font-mono">
-                    匹配规则库 V2.6
-                  </span>
+                  <span className="text-xs text-zinc-500">样例结果·需人工确认</span>
                 </div>
 
                 {/* 1. Recommended Garments (适合的服装) */}
@@ -1437,7 +1432,7 @@ export const MatchingView: React.FC<MatchingViewProps> = ({
                       </h4>
                     </div>
                     <span className="text-[11px] text-zinc-500 font-sans">
-                      基于【{inspectedFabric.weaveCategory.value}】组织特性与【{inspectedFabric.composition.value}】纤维属性推导
+                      参考【{inspectedFabric.weaveCategory.value}】组织与【{inspectedFabric.composition.value}】成分信息
                     </span>
                   </div>
 

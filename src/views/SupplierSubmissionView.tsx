@@ -184,7 +184,7 @@ export const SupplierSubmissionView: React.FC<SupplierSubmissionViewProps> = ({
           供应商面料资料在线填报单
         </h1>
         <p className="text-xs text-zinc-500 leading-relaxed font-sans">
-          尊敬的供应商合作伙伴：请您完整填报面料物理参数与商务条件。提交后系统将通过 AI 自动解析并建立面料数字主档。
+          尊敬的供应商合作伙伴：请您填写面料规格与商务条件。提交后将进入 Creabra 待确认清单。
         </p>
       </div>
 
@@ -197,7 +197,7 @@ export const SupplierSubmissionView: React.FC<SupplierSubmissionViewProps> = ({
             </div>
             <div>
               <h3 className="font-bold text-white text-base">
-                面料资料已成功提交！
+                样例提交已完成
               </h3>
               <p className="text-xs text-zinc-400 mt-0.5">
                 收录凭证编码：<span className="font-mono font-bold text-white">{submittedToken}</span>
@@ -206,7 +206,7 @@ export const SupplierSubmissionView: React.FC<SupplierSubmissionViewProps> = ({
           </div>
 
           <p className="text-xs text-zinc-300 leading-relaxed font-sans">
-            该面料已自动流转至 Creabra 内部审核工作台（状态：待确认审核），并同步建立多模态数字化档案。
+            本页为视觉参考，未连接真实提交流程。正式系统提交后，资料应进入内部待确认清单。
           </p>
 
           <div className="flex items-center gap-3 pt-2">
@@ -599,7 +599,7 @@ export const SupplierSubmissionView: React.FC<SupplierSubmissionViewProps> = ({
           {/* Submit Button */}
           <div className="pt-2 flex items-center justify-end gap-4">
             <span className="text-xs text-zinc-400 font-sans">
-              数据提交后由 Creabra 进行 AI 验真与多维归档
+              提交后由 Creabra 人员核对并确认入库
             </span>
             <motion.button
               whileTap={{ scale: 0.98 }}

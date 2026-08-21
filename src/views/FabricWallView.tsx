@@ -194,7 +194,7 @@ export const FabricWallView: React.FC<FabricWallViewProps> = ({
             </span>
           </div>
           <p className="text-xs text-zinc-500 mt-1 font-sans">
-            收录 {fabrics.length} 款多模态面料。支持根据成分、克重、织法、透明度、弹性与适用品类智能检索。
+            收录 {fabrics.length} 款样例面料。可按成分、克重、织法、透明度、弹性与适用品类查找。
           </p>
         </div>
 
@@ -746,9 +746,9 @@ export const FabricWallView: React.FC<FabricWallViewProps> = ({
                 </div>
 
                 <div className="p-3 bg-zinc-50 rounded-2xl border border-zinc-200 text-zinc-600 text-[11px] space-y-1">
-                  <p className="font-bold text-zinc-900">✨ 独立主站集成优势：</p>
-                  <p>• 外部客户无需登录后台，直接在主站浏览最新面料与实拍质感</p>
-                  <p>• 自动隔离采购底价与供应商私密联系方式，保护企业供应链壁垒</p>
+                  <p className="font-bold text-zinc-900">外部浏览入口视觉样例</p>
+                  <p>• 本原型仅使用虚构数据展示浏览体验</p>
+                  <p>• 正式开发后，外部客户只能查看获授权的面料信息</p>
                 </div>
               </div>
 

@@ -44,7 +44,7 @@ export const StatusBadge: React.FC<StatusBadgeProps> = ({
       break;
 
     case 'inferred':
-      label = '自动提取';
+      label = 'AI推测·待确认';
       colorClasses = 'bg-zinc-50 text-zinc-700 border-zinc-200';
       IconComponent = Clock;
       break;
@@ -88,4 +88,3 @@ export const StatusBadge: React.FC<StatusBadgeProps> = ({
     </span>
   );
 };
-

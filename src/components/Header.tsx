@@ -133,7 +133,7 @@ export const Header: React.FC<HeaderProps> = ({
               >
                 <div className="flex items-center justify-between pb-2 border-b border-zinc-200/70">
                   <span className="text-xs font-semibold text-zinc-950">系统风险与处理提醒</span>
-                  <span className="text-[10px] text-zinc-400 font-mono">P0 实时规则</span>
+                  <span className="text-[10px] text-zinc-400">样例数据提醒</span>
                 </div>
                 <div className="py-2.5 space-y-2 text-xs">
                   {conflictCount > 0 && (

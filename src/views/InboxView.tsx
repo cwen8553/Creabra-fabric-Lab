@@ -173,7 +173,7 @@ export const InboxView: React.FC<InboxViewProps> = ({
       setCurrentExtraAttachments(data.extraAttachments);
     }
     setAiFilled(true);
-    showToast(`✨ AI 已自动识别并填入【${data.fabricName}】全部规格与价格参数！`);
+    showToast(`已填入【${data.fabricName}】的样例整理结果，请继续人工核对。`);
   };
 
   const toggleSpecialCraft = (craft: string) => {
@@ -203,7 +203,7 @@ export const InboxView: React.FC<InboxViewProps> = ({
     setTimeout(() => {
       setSimulateStage(5);
       setIsSimulating(false);
-      showToast('已完成多重数据解析！提取 12 份数据证据切片并完成查重归类。');
+      showToast('样例整理已完成，请查看结果并逐项确认。');
     }, 4800);
   };
 
@@ -257,7 +257,7 @@ export const InboxView: React.FC<InboxViewProps> = ({
       id: randomId,
       systemCode: autoSystemCode,
       supplierShortName: matchedSupplier ? matchedSupplier.shortName : cleanShort,
-      name: { value: fabricName, status: 'pending_review', confidence: 0.98, sourceEvidence: ['单款多模态实拍录入'] },
+      name: { value: fabricName, status: 'pending_review', confidence: 0.98, sourceEvidence: ['单款图片资料录入'] },
       supplierItemCode: { value: itemCode, status: 'confirmed', confidence: 1.0 },
       supplierName: matchedSupplier ? matchedSupplier.name : supplierName,
       supplierContact: contactName,
@@ -376,9 +376,9 @@ export const InboxView: React.FC<InboxViewProps> = ({
     }
 
     if (matchedSupplier) {
-      showToast(`✨ 面料【${fabricName}】录入成功！已自动归入已有供应商【${matchedSupplier.shortName}】面料组与系统主档。`);
+      showToast(`面料【${fabricName}】已进入待确认清单，建议关联已有供应商【${matchedSupplier.shortName}】。`);
     } else {
-      showToast(`✨ 面料【${fabricName}】录入成功！系统已为您自动创建新供应商【${supplierName}】专属档案及其独立业务分组！`);
+      showToast(`面料【${fabricName}】已进入待确认清单，供应商【${supplierName}】档案需人工确认。`);
     }
 
     setActiveTab('batch');
@@ -457,7 +457,7 @@ export const InboxView: React.FC<InboxViewProps> = ({
                 拖入色卡照片、扫描 PDF、Excel 报价单或实物细节图
               </h3>
               <p className="text-xs text-zinc-500 mt-1 max-w-md font-sans">
-                支持 JPG、PNG、WEBP、PDF、XLSX 格式。系统将自动提取规格参数、识别颜色款式并进行同款查重。
+                支持 JPG、PNG、WEBP、PDF、XLSX 格式。导入后请检查样例整理结果。
               </p>
               <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
                 <label className="px-4 py-2 bg-white hover:bg-zinc-100 border border-zinc-300 text-zinc-800 rounded-xl text-xs font-bold transition-all cursor-pointer shadow-2xs flex items-center gap-2">
@@ -484,12 +484,12 @@ export const InboxView: React.FC<InboxViewProps> = ({
                   {isSimulating ? (
                     <>
                       <RefreshCw className="w-3.5 h-3.5 animate-spin" />
-                      <span>正在深度解析多源文件...</span>
+                      <span>正在整理样例文件...</span>
                     </>
                   ) : (
                     <>
                       <Play className="w-3.5 h-3.5" />
-                      <span>启动多源批量智能解析</span>
+                      <span>查看样例整理过程</span>
                     </>
                   )}
                 </button>
@@ -504,7 +504,7 @@ export const InboxView: React.FC<InboxViewProps> = ({
                   <span>抓取供应商公开网页链接</span>
                 </div>
                 <p className="text-xs text-zinc-500 font-sans leading-relaxed">
-                  输入供应商面料详情公开链接，系统将自动抓取规格表与色系图片。
+                  输入供应商面料的公开链接，作为待整理的资料来源。
                 </p>
               </div>
 
@@ -618,7 +618,7 @@ export const InboxView: React.FC<InboxViewProps> = ({
               {aiFilled && (
                 <span className="text-[10px] font-mono text-zinc-500 bg-zinc-100 px-2 py-0.5 rounded-full flex items-center gap-1">
                   <Sparkles className="w-3 h-3 text-zinc-700" />
-                  AI 已自动填充
+                  样例结果·待核对
                 </span>
               )}
             </div>
@@ -1020,4 +1020,3 @@ export const InboxView: React.FC<InboxViewProps> = ({
     </div>
   );
 };
-

@@ -118,7 +118,7 @@ export const SuppliersView: React.FC<SuppliersViewProps> = ({
           : item
       )
     );
-    showToast(`已批量确认【${supplierName}】旗下所有高置信度同款归组！`);
+    showToast(`已确认【${supplierName}】旗下所有建议同款记录！`);
   };
 
   // Copy inquiry text for a specific supplier
@@ -340,9 +340,9 @@ export const SuppliersView: React.FC<SuppliersViewProps> = ({
       {activeTab === 'grouping' && (
         <div className="space-y-6">
           <div className="bg-zinc-50 p-4 rounded-2xl border border-zinc-200 text-xs text-zinc-600 leading-relaxed">
-            <p className="font-bold text-zinc-900 mb-1">同款面料智能聚类规则：</p>
-            • 同一供应商旗下的色卡翻拍、多规格报价与详情页会自动聚类为同款候选。<br />
-            • 高置信度归组支持一键批量确认，生成统一系统编码并保留各色卡款式。
+            <p className="font-bold text-zinc-900 mb-1">同款候选确认：</p>
+            • 同一供应商下的相关色卡、报价和详情页会集中展示。<br />
+            • 请对照货号和规格，确认合并或分开保留。
           </div>
 
           {groupedCandidates.map(([supplierName, items]) => {
@@ -393,21 +393,25 @@ export const SuppliersView: React.FC<SuppliersViewProps> = ({
                             <span className="font-mono text-xs font-bold text-zinc-950">
                               原厂货号: {candidate.supplierItemCode}
                             </span>
-                            <span className="text-xs text-zinc-400 font-mono">
-                              置信度: {(candidate.confidence * 100).toFixed(0)}%
+                            <span className="text-xs text-zinc-500">
+                              {candidate.ruleTier === 'auto_group' ? '建议同款' : '待人工确认'}
                             </span>
                           </div>
                           <h4 className="text-sm font-bold text-zinc-950">{candidate.suggestedName}</h4>
                           <p className="text-xs text-zinc-500 font-sans">{candidate.composition} • {candidate.weightGsm ? `${candidate.weightGsm} gsm` : '缺克重'}</p>
                           <div className="flex items-center gap-1.5 pt-1">
-                            {candidate.extractedColors.map((color, idx) => (
-                              <span
-                                key={idx}
-                                className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-zinc-100 text-zinc-800 border border-zinc-200"
-                              >
-                                {color.name}
-                              </span>
-                            ))}
+                            {(candidate.colorVariantsDetected ?? []).length > 0 ? (
+                              candidate.colorVariantsDetected.map((color, idx) => (
+                                <span
+                                  key={idx}
+                                  className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-zinc-100 text-zinc-800 border border-zinc-200"
+                                >
+                                  {color}
+                                </span>
+                              ))
+                            ) : (
+                              <span className="text-[10px] text-zinc-400">暂未识别颜色</span>
+                            )}
                           </div>
                         </div>
                       </div>

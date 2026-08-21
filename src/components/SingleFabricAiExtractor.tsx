@@ -500,14 +500,14 @@ export const SingleFabricAiExtractor: React.FC<SingleFabricAiExtractorProps> = (
           <div>
             <div className="flex items-center gap-2 flex-wrap">
               <h2 className="text-sm font-bold text-zinc-950">
-                多模态多图智能识别与主图提取工作台
+                面料图片与资料整理
               </h2>
               <span className="text-[10px] bg-zinc-100 text-zinc-900 border border-zinc-300 px-2.5 py-0.5 rounded-full font-mono font-bold">
-                P0 交互标准 · 多图多模态解析
+                V1 视觉参考
               </span>
             </div>
             <p className="text-xs text-zinc-500 mt-1 leading-relaxed">
-              支持批量拖入/上传色卡实拍、挂牌扫描件、布料纹理微距与检测报告。可在素材库中指定主图并实时裁剪，系统自动多图融合解析并填入下方主档。
+              批量添加色卡实拍、挂牌、布料细节图与检测报告。选择主图并裁剪后，检查下方的样例整理结果。
             </p>
           </div>
         </div>
@@ -533,12 +533,12 @@ export const SingleFabricAiExtractor: React.FC<SingleFabricAiExtractorProps> = (
             {isScanning ? (
               <>
                 <RefreshCw className="w-3.5 h-3.5 animate-spin text-zinc-200" />
-                <span>多模态解析中 ({scanStep}/4)...</span>
+                <span>资料整理中 ({scanStep}/4)...</span>
               </>
             ) : (
               <>
                 <Sparkles className="w-3.5 h-3.5 text-zinc-300" />
-                <span>一键多模态深度解析并注入表单</span>
+                <span>查看样例整理结果</span>
               </>
             )}
           </motion.button>
@@ -642,10 +642,10 @@ export const SingleFabricAiExtractor: React.FC<SingleFabricAiExtractorProps> = (
                       <div className="flex justify-between items-start">
                         <div className="px-2 py-1 bg-black/80 text-white rounded text-[10px] font-mono border border-white/20 flex items-center gap-1.5 animate-pulse">
                           <ScanLine className="w-3 h-3 text-zinc-200" />
-                          <span>挂牌 OCR 与材质纹理提取中...</span>
+                          <span>正在整理图片与挂牌资料...</span>
                         </div>
                         <div className="px-2 py-1 bg-black/80 text-white rounded text-[10px] font-mono border border-white/20">
-                          99.2%
+                          样例演示
                         </div>
                       </div>
                       <div className="grid grid-cols-2 gap-2">
@@ -895,12 +895,12 @@ export const SingleFabricAiExtractor: React.FC<SingleFabricAiExtractorProps> = (
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <FileSearch className="w-4 h-4 text-zinc-900" />
-                  <span className="text-xs font-bold text-zinc-950">多模态多图参数抽取与自动填单状态</span>
+                  <span className="text-xs font-bold text-zinc-950">资料整理状态</span>
                 </div>
                 {extractedSuccess && (
                   <span className="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-300 flex items-center gap-1">
                     <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-                    已自动同步填入下方全部表单
+                    样例结果已填入，请人工核对
                   </span>
                 )}
               </div>
@@ -910,13 +910,13 @@ export const SingleFabricAiExtractor: React.FC<SingleFabricAiExtractorProps> = (
                   <div className="w-8 h-8 rounded-full border-2 border-zinc-950 border-t-transparent animate-spin mx-auto" />
                   <div className="space-y-1">
                     <p className="text-xs font-bold text-zinc-900">
-                      {scanStep === 1 && '第 1/4 步：正在并发执行多图 OCR 与挂牌字符结构化...'}
-                      {scanStep === 2 && '第 2/4 步：正在结合微距图像分析经纬密、单双面与组织结构...'}
-                      {scanStep === 3 && '第 3/4 步：正在提取底价/大货/样布价格体系与起订交期条款...'}
-                      {scanStep === 4 && '第 4/4 步：正在对齐供应商知识图谱并将数据完整注入主档...'}
+                      {scanStep === 1 && '第 1/4 步：正在整理图片与挂牌内容...'}
+                      {scanStep === 2 && '第 2/4 步：正在整理面料规格与组织信息...'}
+                      {scanStep === 3 && '第 3/4 步：正在整理价格、起订量与交期...'}
+                      {scanStep === 4 && '第 4/4 步：正在生成待核对的样例结果...'}
                     </p>
                     <p className="text-[11px] text-zinc-500">
-                      多模态引擎自动融合挂牌与实拍特征，实现零人工二次输入的极致效率
+                      此处用于展示交互，结果仍需对照原始资料确认
                     </p>
                   </div>
                 </div>
@@ -944,12 +944,12 @@ export const SingleFabricAiExtractor: React.FC<SingleFabricAiExtractorProps> = (
                         {matchedSupplier ? (
                           <>
                             供应商全称【{matchedSupplier.name}】已存在于档案库中（名下已有 {matchedSupplier.totalFabricsCount} 款面料）。
-                            <strong className="text-white font-semibold"> 录入后将自动归入已有供应商面料组。</strong>
+                            <strong className="text-white font-semibold"> 建议关联已有供应商，待人工确认。</strong>
                           </>
                         ) : (
                           <>
                             供应商【{activeExtractedData.supplierName}】为新入库伙伴。
-                            <strong className="text-white font-semibold"> 录入后系统将自动为您创建新供应商档案及其独立业务分组。</strong>
+                            <strong className="text-white font-semibold"> 录入后将进入新供应商待确认清单。</strong>
                           </>
                         )}
                       </p>
@@ -969,7 +969,7 @@ export const SingleFabricAiExtractor: React.FC<SingleFabricAiExtractorProps> = (
                       <p className="font-mono text-zinc-900 font-bold text-[11px] truncate">
                         {activeExtractedData.composition}
                       </p>
-                      <p className="text-[10px] text-emerald-700 font-medium">置信度 99.8%</p>
+                      <p className="text-[10px] text-emerald-700 font-medium">待人工确认</p>
                     </div>
 
                     <div className="p-2.5 bg-white rounded-xl border border-zinc-200 space-y-0.5">
@@ -1003,7 +1003,7 @@ export const SingleFabricAiExtractor: React.FC<SingleFabricAiExtractorProps> = (
                 </div>
               ) : (
                 <div className="py-5 text-center text-zinc-400 text-xs bg-white rounded-2xl border border-zinc-200">
-                  请上传面料图片或点击【一键多模态深度解析并注入表单】启动自动提取
+                  请上传面料图片或点击【查看样例整理结果】，然后对照原始资料确认
                 </div>
               )}
             </div>

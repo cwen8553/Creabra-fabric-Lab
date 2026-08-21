@@ -45,7 +45,7 @@ export const EvidenceModal: React.FC<EvidenceModalProps> = ({
                 )}
               </h3>
               <p className="text-[11px] text-zinc-400 mt-0.5">
-                多模态 OCR 提取原始证据切片与可信度核验
+                对照原始资料与当前字段
               </p>
             </div>
           </div>
@@ -108,11 +108,11 @@ export const EvidenceModal: React.FC<EvidenceModalProps> = ({
                     </div>
                   </div>
 
-                  {/* OCR extracted texts */}
+                  {/* Source excerpts */}
                   <div className="md:col-span-2 space-y-2">
                     <p className="text-[11px] font-bold text-zinc-600 flex items-center gap-1">
                       <CheckCircle className="w-3.5 h-3.5 text-zinc-900" />
-                      OCR 区域识别切片与文本：
+                      原始资料中的相关内容：
                     </p>
                     <div className="space-y-1.5">
                       {item.ocrSnippets.map((snippet, sIdx) => (
@@ -125,7 +125,7 @@ export const EvidenceModal: React.FC<EvidenceModalProps> = ({
                             <span className="font-mono text-zinc-900 font-medium">{snippet.text}</span>
                           </div>
                           <span className="text-[10px] px-2 py-0.5 rounded-full bg-zinc-100 text-zinc-800 border border-zinc-200 font-mono shrink-0 font-bold">
-                            {Math.round(snippet.confidence * 100)}% 置信
+                            待核对
                           </span>
                         </div>
                       ))}
@@ -139,7 +139,7 @@ export const EvidenceModal: React.FC<EvidenceModalProps> = ({
 
         {/* Footer */}
         <div className="px-6 py-3.5 border-t border-zinc-100 bg-zinc-50 flex items-center justify-between text-xs text-zinc-400">
-          <span>所有证据均由 AI 多模态自动对齐并保留来源指纹</span>
+          <span>请以原始资料为准，并逐项完成人工核对</span>
           <button
             onClick={onClose}
             className="px-4 py-1.5 bg-zinc-950 hover:bg-zinc-800 text-white rounded-xl font-bold transition-all cursor-pointer shadow-xs"

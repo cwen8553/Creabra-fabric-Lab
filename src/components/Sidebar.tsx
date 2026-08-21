@@ -58,7 +58,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
     },
     {
       id: 'matching',
-      label: '智能匹配',
+      label: '面料匹配',
       subtext: '服装找面料 / 面料找服装',
       icon: Sparkles,
       highlight: true,
@@ -149,19 +149,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
           <div className="flex items-center justify-between text-[11px] text-zinc-900 font-bold">
             <span className="flex items-center gap-1.5">
               <Database className="w-3.5 h-3.5 text-zinc-700" />
-              面料知识库引擎
+              V1 视觉参考原型
             </span>
             <span className="flex items-center gap-1 text-[10px] font-mono text-emerald-600 font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-              运行中
+              虚构样例数据
             </span>
           </div>
           <p className="text-[10px] text-zinc-500 leading-relaxed font-sans">
-            支持多模态资料解析、编码体系归集与跨渠道查重
+            用于展示面料导入、核对、检索与匹配交互
           </p>
         </div>
       </div>
     </aside>
   );
 };
-

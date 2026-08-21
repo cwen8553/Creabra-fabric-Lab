@@ -61,7 +61,7 @@ export const GroupingView: React.FC<GroupingViewProps> = ({ onNavigate }) => {
           : item
       )
     );
-    showToast(`已批量确认【${supplier}】旗下所有高置信度同款归组！`);
+    showToast(`已确认【${supplier}】旗下所有建议同款记录！`);
   };
 
   const toggleSupplierCollapse = (supplier: string) => {
@@ -145,35 +145,35 @@ export const GroupingView: React.FC<GroupingViewProps> = ({ onNavigate }) => {
         </div>
       </div>
 
-      {/* Business Rules Legend (PRD 4.4) - Apple OS26 Pure Monochrome */}
+      {/* Business status legend */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="os26-glass rounded-2xl p-4 border border-zinc-200 space-y-1.5 bg-white/70">
           <div className="flex items-center gap-2 font-bold text-zinc-950 text-xs">
             <CheckCircle2 className="w-4 h-4 text-zinc-900" />
-            <span>自动归组 (≥ 85%)</span>
+            <span>建议归为同款</span>
           </div>
           <p className="text-zinc-500 text-[11px] leading-relaxed font-sans">
-            同供应商＋同货号完全吻合，或规格与视觉特征高度重合。系统自动组成同一款面料草稿与多颜色款式。
+            货号和主要规格一致，可在对照原始资料后确认为同款。
           </p>
         </div>
 
         <div className="os26-glass rounded-2xl p-4 border border-zinc-300 space-y-1.5 bg-zinc-100/60">
           <div className="flex items-center gap-2 font-bold text-zinc-950 text-xs">
             <HelpCircle className="w-4 h-4 text-zinc-900" />
-            <span>人工确认 (60% — 84%)</span>
+            <span>需要人工确认</span>
           </div>
           <p className="text-zinc-600 text-[11px] leading-relaxed font-sans">
-            疑似同款（如同供应商但支数不同，或同系列不同克重）。必须人工核实是否合并，禁止静默合并。
+            资料中存在差异或信息不足，保留为待确认，不直接合并。
           </p>
         </div>
 
         <div className="os26-glass rounded-2xl p-4 border border-zinc-200 space-y-1.5 bg-white/70">
           <div className="flex items-center gap-2 font-bold text-zinc-700 text-xs">
             <Split className="w-4 h-4 text-zinc-600" />
-            <span>独立候选 (&lt; 60%)</span>
+            <span>建议独立保留</span>
           </div>
           <p className="text-zinc-500 text-[11px] leading-relaxed font-sans">
-            综合相似度低或属于未知跨供应商散碎截屏。系统拒绝跨厂合并，分别独立保留为独立草稿。
+            货号、规格或供应商不一致，分开保留为独立草稿。
           </p>
         </div>
       </div>
@@ -295,7 +295,7 @@ export const GroupingView: React.FC<GroupingViewProps> = ({ onNavigate }) => {
                         className="px-3 py-1.5 bg-zinc-900 hover:bg-zinc-800 text-white rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shadow-2xs"
                       >
                         <CheckCheck className="w-3.5 h-3.5" />
-                        <span>一键确认该供应商全部自动归组 ({autoCount})</span>
+                        <span>确认该供应商的建议同款 ({autoCount})</span>
                       </button>
                     )}
                   </div>
@@ -331,7 +331,11 @@ export const GroupingView: React.FC<GroupingViewProps> = ({ onNavigate }) => {
                                     : 'bg-zinc-100 text-zinc-600 border-zinc-200'
                                 }`}
                               >
-                                AI 相似度: {candidate.similarityScore}%
+                                {candidate.ruleTier === 'auto_group'
+                                  ? '建议同款'
+                                  : candidate.ruleTier === 'manual_confirm'
+                                  ? '待人工确认'
+                                  : '建议独立保留'}
                               </span>
                             </div>
                             <div className="flex items-center gap-4 text-xs text-zinc-500 mt-1 font-sans">
@@ -417,8 +421,8 @@ export const GroupingView: React.FC<GroupingViewProps> = ({ onNavigate }) => {
                               ))}
                             </div>
                             <div className="pt-2 border-t border-zinc-200 flex items-center justify-between text-[10px] text-zinc-500 font-mono">
-                              <span>规格重合度: {candidate.basis.specSimilarity}%</span>
-                              <span>视觉特征: {candidate.basis.visualSimilarity}%</span>
+                              <span>主要规格可对照</span>
+                              <span>图片特征供参考</span>
                             </div>
                           </div>
 
