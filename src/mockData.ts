@@ -19,12 +19,12 @@ export interface SupplierProfile {
 export const INITIAL_SUPPLIERS: SupplierProfile[] = [
   {
     id: 'SUP-001',
-    name: '绍兴盛泰纺织科技有限公司',
-    shortName: '盛泰',
-    codePrefix: 'ST',
-    contactPerson: '林经理',
-    phone: '138-5750-8821',
-    city: '浙江绍兴 (柯桥)',
+    name: '示例供应商01（虚构）',
+    shortName: '样例01',
+    codePrefix: 'D01',
+    contactPerson: '示例联系人01',
+    phone: '示例号码（不可拨打）',
+    city: '示例产业带01',
     categorySpecialty: ['天丝/莱赛尔', '高密衬衫布', '环保再生纤维'],
     cooperationTier: '战略合作',
     totalFabricsCount: 18,
@@ -34,12 +34,12 @@ export const INITIAL_SUPPLIERS: SupplierProfile[] = [
   },
   {
     id: 'SUP-002',
-    name: '柯桥恒茂纺织科技有限公司',
-    shortName: '恒茂',
-    codePrefix: 'HM',
-    contactPerson: '陈经理',
-    phone: '138-5758-9921',
-    city: '浙江绍兴 (柯桥)',
+    name: '示例供应商02（虚构）',
+    shortName: '样例02',
+    codePrefix: 'D02',
+    contactPerson: '示例联系人02',
+    phone: '示例号码（不可拨打）',
+    city: '示例产业带01',
     categorySpecialty: ['莫代尔速干', '四面高弹针织', '贴身内搭'],
     cooperationTier: '核心主供',
     totalFabricsCount: 14,
@@ -49,12 +49,12 @@ export const INITIAL_SUPPLIERS: SupplierProfile[] = [
   },
   {
     id: 'SUP-003',
-    name: '常州福泽针纺制品厂',
-    shortName: '福泽',
-    codePrefix: 'FZ',
-    contactPerson: '赵总',
-    phone: '139-5192-3341',
-    city: '江苏常州',
+    name: '示例供应商03（虚构）',
+    shortName: '样例03',
+    codePrefix: 'D03',
+    contactPerson: '示例联系人03',
+    phone: '示例号码（不可拨打）',
+    city: '示例产业带03',
     categorySpecialty: ['有机棉平纹', '华夫格针织', '童装及家居'],
     cooperationTier: '核心主供',
     totalFabricsCount: 12,
@@ -64,12 +64,12 @@ export const INITIAL_SUPPLIERS: SupplierProfile[] = [
   },
   {
     id: 'SUP-004',
-    name: '山东如意毛纺织集团',
-    shortName: '如意',
-    codePrefix: 'RY',
-    contactPerson: '王主管',
-    phone: '137-0537-8890',
-    city: '山东济宁',
+    name: '示例供应商04（虚构）',
+    shortName: '样例04',
+    codePrefix: 'D04',
+    contactPerson: '示例联系人04',
+    phone: '示例号码（不可拨打）',
+    city: '示例产业带04',
     categorySpecialty: ['精纺美利诺羊毛', '高支西装呢', '羊绒大衣呢'],
     cooperationTier: '战略合作',
     totalFabricsCount: 16,
@@ -79,12 +79,12 @@ export const INITIAL_SUPPLIERS: SupplierProfile[] = [
   },
   {
     id: 'SUP-005',
-    name: '深圳汇洁新材料技术部',
-    shortName: '汇洁',
-    codePrefix: 'HJ',
-    contactPerson: '周工',
-    phone: '136-8230-1120',
-    city: '广东深圳',
+    name: '示例供应商05（虚构）',
+    shortName: '样例05',
+    codePrefix: 'D05',
+    contactPerson: '示例联系人05',
+    phone: '示例号码（不可拨打）',
+    city: '示例产业带05',
     categorySpecialty: ['超细锦纶速干', '四面回弹防透布', '无痕贴合'],
     cooperationTier: '核心主供',
     totalFabricsCount: 10,
@@ -94,12 +94,12 @@ export const INITIAL_SUPPLIERS: SupplierProfile[] = [
   },
   {
     id: 'SUP-006',
-    name: '吴江尚宏丝绸数码印染',
-    shortName: '尚宏',
-    codePrefix: 'SH',
-    contactPerson: '钱经理',
-    phone: '133-0625-7711',
-    city: '江苏苏州 (盛泽)',
+    name: '示例供应商06（虚构）',
+    shortName: '样例06',
+    codePrefix: 'D06',
+    contactPerson: '示例联系人06',
+    phone: '示例号码（不可拨打）',
+    city: '示例产业带06',
     categorySpecialty: ['桑蚕丝素绉缎', '真丝双绉', '数码喷绘印花'],
     cooperationTier: '储备开发',
     totalFabricsCount: 8,
@@ -109,12 +109,12 @@ export const INITIAL_SUPPLIERS: SupplierProfile[] = [
   },
   {
     id: 'SUP-007',
-    name: '南通润祥高密家纺纺织',
-    shortName: '润祥',
-    codePrefix: 'RX',
-    contactPerson: '孙厂长',
-    phone: '135-0629-4455',
-    city: '江苏南通',
+    name: '示例供应商07（虚构）',
+    shortName: '样例07',
+    codePrefix: 'D07',
+    contactPerson: '示例联系人07',
+    phone: '示例号码（不可拨打）',
+    city: '示例产业带07',
     categorySpecialty: ['高支长绒棉', '双层棉纱', '抗菌防螨整理'],
     cooperationTier: '储备开发',
     totalFabricsCount: 9,
@@ -125,26 +125,26 @@ export const INITIAL_SUPPLIERS: SupplierProfile[] = [
 ];
 
 const SUPPLIER_CODE_MAP: Record<string, { shortName: string; prefix: string }> = {
-  '绍兴盛泰纺织科技有限公司': { shortName: '盛泰', prefix: 'ST' },
-  '柯桥恒茂纺织科技有限公司': { shortName: '恒茂', prefix: 'HM' },
-  '常州福泽针纺制品厂': { shortName: '福泽', prefix: 'FZ' },
-  '南通润祥高密家纺纺织': { shortName: '润祥', prefix: 'RX' },
-  '吴江尚宏丝绸数码印染': { shortName: '尚宏', prefix: 'SH' },
-  '山东如意毛纺织集团': { shortName: '如意', prefix: 'RY' },
-  '深圳汇洁新材料技术部': { shortName: '汇洁', prefix: 'HJ' },
-  '广州锦达针织实业': { shortName: '锦达', prefix: 'JD' },
-  '浙江华孚色纺股份': { shortName: '华孚', prefix: 'HF' },
-  '南通联发纺织': { shortName: '联发', prefix: 'LF' },
-  '海宁华宇超纤新材料': { shortName: '华宇', prefix: 'HY' },
-  '吴江鼎立纺织实业有限公司': { shortName: '鼎立', prefix: 'DL' },
-  '广州锦宏纺织科技有限公司': { shortName: '锦宏', prefix: 'JH' },
-  '绍兴柯桥金丰纺织': { shortName: '金丰', prefix: 'JF' },
-  '湖州丝悦丝绸纺织': { shortName: '丝悦', prefix: 'SY' },
-  '汕头潮南雅美刺绣蕾丝': { shortName: '雅美', prefix: 'YM' },
-  '杭州织韵数码提花锦缎': { shortName: '织韵', prefix: 'ZY' },
-  '常州华纺粗花呢实业': { shortName: '华纺', prefix: 'HF' },
-  '张家港恒盛针纺科技': { shortName: '恒盛', prefix: 'HS' },
-  '佛山德润高密针织科技': { shortName: '德润', prefix: 'DR' },
+  '示例供应商01（虚构）': { shortName: '样例01', prefix: 'D01' },
+  '示例供应商02（虚构）': { shortName: '样例02', prefix: 'D02' },
+  '示例供应商03（虚构）': { shortName: '样例03', prefix: 'D03' },
+  '示例供应商07（虚构）': { shortName: '样例07', prefix: 'D07' },
+  '示例供应商06（虚构）': { shortName: '样例06', prefix: 'D06' },
+  '示例供应商04（虚构）': { shortName: '样例04', prefix: 'D04' },
+  '示例供应商05（虚构）': { shortName: '样例05', prefix: 'D05' },
+  '示例供应商08（虚构）': { shortName: '样例08', prefix: 'D08' },
+  '示例供应商09（虚构）': { shortName: '样例09', prefix: 'D09' },
+  '示例供应商10（虚构）': { shortName: '样例10', prefix: 'D10' },
+  '示例供应商11（虚构）': { shortName: '样例11', prefix: 'D11' },
+  '示例供应商12（虚构）': { shortName: '样例12', prefix: 'D12' },
+  '示例供应商13（虚构）': { shortName: '样例13', prefix: 'D13' },
+  '示例供应商14（虚构）': { shortName: '样例14', prefix: 'D14' },
+  '示例供应商15（虚构）': { shortName: '样例15', prefix: 'D15' },
+  '示例供应商16（虚构）': { shortName: '样例16', prefix: 'D16' },
+  '示例供应商17（虚构）': { shortName: '样例17', prefix: 'D17' },
+  '示例供应商18（虚构）': { shortName: '样例18', prefix: 'D18' },
+  '示例供应商19（虚构）': { shortName: '样例19', prefix: 'D19' },
+  '示例供应商20（虚构）': { shortName: '样例20', prefix: 'D20' },
 };
 
 export const INITIAL_GROUPING_CANDIDATES: GroupingCandidate[] = [
@@ -152,7 +152,7 @@ export const INITIAL_GROUPING_CANDIDATES: GroupingCandidate[] = [
     id: 'GRP-001',
     suggestedFabricId: 'FAB-001',
     suggestedName: '60S天丝平纹 (多来源聚合建议)',
-    supplierName: '绍兴盛泰纺织科技有限公司',
+    supplierName: '示例供应商01（虚构）',
     supplierItemCode: 'CB-LY-2041',
     similarityScore: 92,
     ruleTier: 'auto_group',
@@ -191,7 +191,7 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
   {
     "id": "FAB-001",
     "systemCode": "ST-LY-2041",
-    "supplierShortName": "盛泰",
+    "supplierShortName": "样例01",
     "name": {
       "value": "云感高密莱赛尔天丝平纹",
       "status": "confirmed",
@@ -211,9 +211,9 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
       "status": "confirmed",
       "confidence": 0.99
     },
-    "supplierName": "绍兴盛泰纺织科技有限公司",
-    "supplierContact": "林经理",
-    "supplierPhone": "138-5750-8821",
+    "supplierName": "示例供应商01（虚构）",
+    "supplierContact": "示例联系人01",
+    "supplierPhone": "示例号码（不可拨打）",
     "basePrice": {
       "value": 24.5,
       "unit": "元/米",
@@ -429,7 +429,7 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
         "id": "s1",
         "sourceId": "SRC-0001",
         "type": "color_card",
-        "title": "盛泰纺织_天丝60S色卡原图.jpg",
+        "title": "样例01纺织_天丝60S色卡原图.jpg",
         "thumbnail": "https://images.unsplash.com/photo-1584589167171-541ce45f1eea?w=300&auto=format&fit=crop&q=80",
         "extractedAt": "2026-08-15 14:20",
         "ocrSnippets": [
@@ -457,7 +457,7 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
   {
     "id": "FAB-002",
     "systemCode": "HY-SP-8830",
-    "supplierShortName": "华宇",
+    "supplierShortName": "样例11",
     "name": {
       "value": "超轻凉感锦氨四面弹运动针织",
       "status": "confirmed",
@@ -473,9 +473,9 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
       "status": "confirmed",
       "confidence": 0.98
     },
-    "supplierName": "海宁华宇超纤新材料有限公司",
-    "supplierContact": "周总监",
-    "supplierPhone": "139-6733-4920",
+    "supplierName": "示例供应商11（虚构）",
+    "supplierContact": "示例联系人11",
+    "supplierPhone": "示例号码（不可拨打）",
     "basePrice": {
       "value": 28.5,
       "unit": "元/米",
@@ -679,7 +679,7 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
   {
     "id": "FAB-003",
     "systemCode": "FZ-CT-901",
-    "supplierShortName": "福泽",
+    "supplierShortName": "样例03",
     "name": {
       "value": "精梳棉微弹双面罗纹布 (待补克重)",
       "status": "pending_review",
@@ -695,9 +695,9 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
       "status": "confirmed",
       "confidence": 0.92
     },
-    "supplierName": "常州福泽针纺制品厂",
-    "supplierContact": "赵总",
-    "supplierPhone": "139-5192-3341",
+    "supplierName": "示例供应商03（虚构）",
+    "supplierContact": "示例联系人03",
+    "supplierPhone": "示例号码（不可拨打）",
     "basePrice": {
       "value": 25,
       "unit": "元/公斤",
@@ -750,7 +750,7 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
       "unit": "gsm",
       "status": "missing",
       "confidence": 0,
-      "requiredAction": "向常州福泽确认实测克重范围 (预估210-240gsm)"
+      "requiredAction": "向常州样例03确认实测克重范围 (预估210-240gsm)"
     },
     "width": {
       "value": 175,
@@ -877,7 +877,7 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
   {
     "id": "FAB-004",
     "systemCode": "DL-NY-702D",
-    "supplierShortName": "鼎立",
+    "supplierShortName": "样例12",
     "name": {
       "value": "防风防泼水三防锦纶斜纹梭织",
       "status": "confirmed",
@@ -893,9 +893,9 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
       "status": "confirmed",
       "confidence": 0.97
     },
-    "supplierName": "吴江鼎立纺织实业有限公司",
-    "supplierContact": "苏芳",
-    "supplierPhone": "135-8429-1130",
+    "supplierName": "示例供应商12（虚构）",
+    "supplierContact": "示例联系人12",
+    "supplierPhone": "示例号码（不可拨打）",
     "basePrice": {
       "value": 15,
       "unit": "元/米",
@@ -1089,7 +1089,7 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
   {
     "id": "FAB-005",
     "systemCode": "LF-CT-3302",
-    "supplierShortName": "联发",
+    "supplierShortName": "样例10",
     "name": {
       "value": "精梳棉弹力平纹布 (存在成分/克重冲突)",
       "status": "conflicting",
@@ -1105,9 +1105,9 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
       "status": "confirmed",
       "confidence": 0.93
     },
-    "supplierName": "南通联发纺织股份有限公司",
-    "supplierContact": "王经理",
-    "supplierPhone": "136-0628-5541",
+    "supplierName": "示例供应商10（虚构）",
+    "supplierContact": "示例联系人10",
+    "supplierPhone": "示例号码（不可拨打）",
     "basePrice": {
       "value": 20,
       "unit": "元/米",
@@ -1286,7 +1286,7 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
   {
     "id": "FAB-006",
     "systemCode": "JH-Q618",
-    "supplierShortName": "锦宏",
+    "supplierShortName": "样例13",
     "name": {
       "value": "法式透气浮雕提花网眼布",
       "status": "confirmed",
@@ -1302,9 +1302,9 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
       "status": "confirmed",
       "confidence": 0.97
     },
-    "supplierName": "广州锦宏纺织科技有限公司",
-    "supplierContact": "梁经理",
-    "supplierPhone": "138-0288-9900",
+    "supplierName": "示例供应商13（虚构）",
+    "supplierContact": "示例联系人13",
+    "supplierPhone": "示例号码（不可拨打）",
     "basePrice": {
       "value": 28.9,
       "unit": "元/米",
@@ -1499,7 +1499,7 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
   {
     "id": "FAB-007",
     "systemCode": "RY-W-1880",
-    "supplierShortName": "如意",
+    "supplierShortName": "样例04",
     "name": {
       "value": "羊毛桑蚕丝混纺高支斜纹西装面料",
       "status": "confirmed",
@@ -1515,9 +1515,9 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
       "status": "confirmed",
       "confidence": 0.99
     },
-    "supplierName": "山东如意毛纺织集团",
-    "supplierContact": "王主管",
-    "supplierPhone": "137-0537-8890",
+    "supplierName": "示例供应商04（虚构）",
+    "supplierContact": "示例联系人04",
+    "supplierPhone": "示例号码（不可拨打）",
     "basePrice": {
       "value": 78,
       "unit": "元/米",
@@ -1696,7 +1696,7 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
   {
     "id": "FAB-008",
     "systemCode": "JD-Q150",
-    "supplierShortName": "锦达",
+    "supplierShortName": "样例08",
     "name": {
       "value": "全消光吸排速干涤纶鸟眼网眼布",
       "status": "confirmed",
@@ -1712,9 +1712,9 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
       "status": "confirmed",
       "confidence": 0.98
     },
-    "supplierName": "广州锦达针织实业",
-    "supplierContact": "陈总",
-    "supplierPhone": "138-0299-1144",
+    "supplierName": "示例供应商08（虚构）",
+    "supplierContact": "示例联系人08",
+    "supplierPhone": "示例号码（不可拨打）",
     "basePrice": {
       "value": 16.5,
       "unit": "元/米",
@@ -1889,7 +1889,7 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
   {
     "id": "FAB-009",
     "systemCode": "HM-SP-4010",
-    "supplierShortName": "恒茂",
+    "supplierShortName": "样例02",
     "name": {
       "value": "莫代尔真丝混纺轻奢罗纹针织",
       "status": "confirmed",
@@ -1905,9 +1905,9 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
       "status": "confirmed",
       "confidence": 0.97
     },
-    "supplierName": "柯桥恒茂纺织科技有限公司",
-    "supplierContact": "陈经理",
-    "supplierPhone": "138-5758-9921",
+    "supplierName": "示例供应商02（虚构）",
+    "supplierContact": "示例联系人02",
+    "supplierPhone": "示例号码（不可拨打）",
     "basePrice": {
       "value": 36,
       "unit": "元/米",
@@ -2090,7 +2090,7 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
   {
     "id": "FAB-010",
     "systemCode": "RX-CT-2200",
-    "supplierShortName": "润祥",
+    "supplierShortName": "样例07",
     "name": {
       "value": "重磅水洗双层棉纱布 (亲肤透气)",
       "status": "confirmed",
@@ -2106,9 +2106,9 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
       "status": "confirmed",
       "confidence": 0.98
     },
-    "supplierName": "南通润祥高密家纺纺织",
-    "supplierContact": "孙厂长",
-    "supplierPhone": "135-0629-4455",
+    "supplierName": "示例供应商07（虚构）",
+    "supplierContact": "示例联系人07",
+    "supplierPhone": "示例号码（不可拨打）",
     "basePrice": {
       "value": 18.5,
       "unit": "元/米",
@@ -2285,7 +2285,7 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
   {
     "id": "FAB-013",
     "systemCode": "JF-DN-1250",
-    "supplierShortName": "金丰",
+    "supplierShortName": "样例14",
     "name": {
       "value": "12.5安重磅复古赤耳微弹竹节牛仔布",
       "status": "confirmed",
@@ -2301,9 +2301,9 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
       "status": "confirmed",
       "confidence": 0.98
     },
-    "supplierName": "绍兴柯桥金丰纺织",
-    "supplierContact": "吴经理",
-    "supplierPhone": "139-5750-6677",
+    "supplierName": "示例供应商14（虚构）",
+    "supplierContact": "示例联系人14",
+    "supplierPhone": "示例号码（不可拨打）",
     "basePrice": {
       "value": 26,
       "unit": "元/米",
@@ -2483,7 +2483,7 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
   {
     "id": "FAB-015",
     "systemCode": "SY-SK-1900",
-    "supplierShortName": "丝悦",
+    "supplierShortName": "样例15",
     "name": {
       "value": "19姆米重磅桑蚕丝真丝双绉",
       "status": "confirmed",
@@ -2499,9 +2499,9 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
       "status": "confirmed",
       "confidence": 0.99
     },
-    "supplierName": "湖州丝悦丝绸纺织",
-    "supplierContact": "沈经理",
-    "supplierPhone": "136-5582-7711",
+    "supplierName": "示例供应商15（虚构）",
+    "supplierContact": "示例联系人15",
+    "supplierPhone": "示例号码（不可拨打）",
     "basePrice": {
       "value": 68,
       "unit": "元/米",
@@ -2676,7 +2676,7 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
   {
     "id": "FAB-018",
     "systemCode": "HF-TW-3800",
-    "supplierShortName": "华纺",
+    "supplierShortName": "样例18",
     "name": {
       "value": "小香风名媛金银丝颗粒感粗花呢",
       "status": "confirmed",
@@ -2692,9 +2692,9 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
       "status": "confirmed",
       "confidence": 0.98
     },
-    "supplierName": "常州华纺粗花呢实业",
-    "supplierContact": "张总",
-    "supplierPhone": "138-5190-2233",
+    "supplierName": "示例供应商18（虚构）",
+    "supplierContact": "示例联系人18",
+    "supplierPhone": "示例号码（不可拨打）",
     "basePrice": {
       "value": 48,
       "unit": "元/米",
@@ -2879,7 +2879,7 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
   {
     "id": "FAB-019",
     "systemCode": "HS-SW-4200",
-    "supplierShortName": "恒盛",
+    "supplierShortName": "样例19",
     "name": {
       "value": "420G 重磅纯棉大毛圈底卫衣布 (表面微磨毛)",
       "status": "confirmed",
@@ -2895,9 +2895,9 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
       "status": "confirmed",
       "confidence": 0.98
     },
-    "supplierName": "张家港恒盛针纺科技",
-    "supplierContact": "陆总",
-    "supplierPhone": "137-7322-8811",
+    "supplierName": "示例供应商19（虚构）",
+    "supplierContact": "示例联系人19",
+    "supplierPhone": "示例号码（不可拨打）",
     "basePrice": {
       "value": 28,
       "unit": "元/公斤",
@@ -3073,7 +3073,7 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
   {
     "id": "FAB-020",
     "systemCode": "DR-RM-3500",
-    "supplierShortName": "德润",
+    "supplierShortName": "样例20",
     "name": {
       "value": "40S 高支锦棉双面紧密纺弹力罗马布",
       "status": "confirmed",
@@ -3089,9 +3089,9 @@ export const RAW_INITIAL_FABRICS: FabricMaster[] = [
       "status": "confirmed",
       "confidence": 0.98
     },
-    "supplierName": "佛山德润高密针织科技",
-    "supplierContact": "林总",
-    "supplierPhone": "139-2866-3399",
+    "supplierName": "示例供应商20（虚构）",
+    "supplierContact": "示例联系人20",
+    "supplierPhone": "示例号码（不可拨打）",
     "basePrice": {
       "value": 32,
       "unit": "元/米",
@@ -3281,7 +3281,7 @@ export const INITIAL_FABRICS: FabricMaster[] = RAW_INITIAL_FABRICS.map((fabric) 
   const shortName = fabric.supplierShortName || supplierInfo.shortName;
   const rawCode = fabric.supplierItemCode?.value || fabric.id;
   const cleanCode = rawCode.replace(/[^a-zA-Z0-9]/g, '').slice(-4).toUpperCase() || fabric.id.replace('FAB-', '');
-  const systemCode = fabric.systemCode || `${supplierInfo.prefix}-${cleanCode}`;
+  const systemCode = `${supplierInfo.prefix}-${cleanCode}`;
 
   return {
     ...fabric,

@@ -60,9 +60,9 @@ export const InboxView: React.FC<InboxViewProps> = ({
     {
       id: 'SRC-0001',
       type: 'color_card',
-      name: '盛泰纺织_天丝60S色卡原图.jpg',
-      supplier: '绍兴盛泰纺织科技有限公司',
-      shortName: '盛泰',
+      name: '样例01纺织_天丝60S色卡原图.jpg',
+      supplier: '示例供应商01（虚构）',
+      shortName: '样例01',
       itemCode: 'CB-LY-2041',
       status: 'ready',
       ocrCount: 3,
@@ -73,8 +73,8 @@ export const InboxView: React.FC<InboxViewProps> = ({
       id: 'SRC-0002',
       type: 'web_page',
       name: 'https://supplier.example.com/p/8830-nylon-spandex',
-      supplier: '海宁华宇超纤新材料',
-      shortName: '华宇',
+      supplier: '示例供应商11（虚构）',
+      shortName: '样例11',
       itemCode: 'HY-SP-8830',
       status: 'ready',
       ocrCount: 4,
@@ -84,9 +84,9 @@ export const InboxView: React.FC<InboxViewProps> = ({
     {
       id: 'SRC-0003',
       type: 'screenshot',
-      name: '常州福泽_色卡翻拍局部.png',
-      supplier: '常州福泽针纺制品厂',
-      shortName: '福泽',
+      name: '常州样例03_色卡翻拍局部.png',
+      supplier: '示例供应商03（虚构）',
+      shortName: '样例03',
       itemCode: 'FZ-CT-901',
       status: 'needs_attention',
       ocrCount: 2,
@@ -97,9 +97,9 @@ export const InboxView: React.FC<InboxViewProps> = ({
     {
       id: 'SRC-0005',
       type: 'photo',
-      name: '南通联发_多来源实物打样.jpg',
-      supplier: '南通联发纺织',
-      shortName: '联发',
+      name: '南通样例10_多来源实物打样.jpg',
+      supplier: '示例供应商10（虚构）',
+      shortName: '样例10',
       itemCode: 'NT-CT-3302',
       status: 'conflict',
       ocrCount: 4,
@@ -110,10 +110,10 @@ export const InboxView: React.FC<InboxViewProps> = ({
   ]);
 
   // Single submission form state
-  const [supplierName, setSupplierName] = useState('柯桥恒茂纺织科技有限公司');
-  const [supplierShortName, setSupplierShortName] = useState('恒茂');
-  const [contactName, setContactName] = useState('陈经理');
-  const [contactPhone, setContactPhone] = useState('138-5758-9921');
+  const [supplierName, setSupplierName] = useState('示例供应商02（虚构）');
+  const [supplierShortName, setSupplierShortName] = useState('样例02');
+  const [contactName, setContactName] = useState('示例联系人02');
+  const [contactPhone, setContactPhone] = useState('示例号码（不可拨打）');
   const [fabricName, setFabricName] = useState('75D 莫代尔速干透气高弹平纹布');
   const [itemCode, setItemCode] = useState('HM-2025-MOD88');
   const [composition, setComposition] = useState('78% 兰精莫代尔 16% 涤纶 6% 氨纶');
@@ -642,7 +642,7 @@ export const InboxView: React.FC<InboxViewProps> = ({
                   required
                   value={supplierShortName}
                   onChange={(e) => setSupplierShortName(e.target.value)}
-                  placeholder="如：恒茂、盛泰、福泽"
+                  placeholder="如：样例02、样例01、样例03"
                   className="w-full bg-zinc-50 border border-zinc-200 rounded-xl p-2.5 text-xs text-zinc-900 focus:outline-hidden focus:border-zinc-900 font-bold"
                 />
               </div>

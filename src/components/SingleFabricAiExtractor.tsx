@@ -324,12 +324,12 @@ export const SingleFabricAiExtractor: React.FC<SingleFabricAiExtractorProps> = (
     const assetNames = currentAssetList.map((a) => a.name).join(' ');
 
     // Deduce or synthesize high-precision textile parameters based on uploaded assets
-    let deducedSupplier = '柯桥恒茂纺织科技有限公司';
-    let deducedShort = '恒茂';
-    let deducedContact = '陈经理';
-    let deducedPhone = '138-5758-9921';
+    let deducedSupplier = '示例供应商02（虚构）';
+    let deducedShort = '样例02';
+    let deducedContact = '示例联系人02';
+    let deducedPhone = '示例号码（不可拨打）';
     let deducedFabricName = '75D 莫代尔速干透气高弹平纹布';
-    let deducedItemCode = 'HM-2025-MOD88';
+    let deducedItemCode = 'DEMO-MOD88';
     let deducedComp = '78% 兰精莫代尔 16% 涤纶 6% 氨纶';
     let deducedWeight = '185';
     let deducedWidth = '165';
@@ -345,13 +345,13 @@ export const SingleFabricAiExtractor: React.FC<SingleFabricAiExtractorProps> = (
     let deducedLeadTime = '15-20天';
     let deducedFunctions = '吸湿排汗, 亲肤透气, 四面高弹, 抗菌防臭, 柔软挺括';
 
-    if (assetNames.includes('盛泰') || assetNames.includes('天丝') || assetNames.includes('莱赛尔')) {
-      deducedSupplier = '绍兴盛泰纺织科技有限公司';
-      deducedShort = '盛泰';
-      deducedContact = '林经理';
-      deducedPhone = '138-5750-8821';
+    if (assetNames.includes('样例01') || assetNames.includes('天丝') || assetNames.includes('莱赛尔')) {
+      deducedSupplier = '示例供应商01（虚构）';
+      deducedShort = '样例01';
+      deducedContact = '示例联系人01';
+      deducedPhone = '示例号码（不可拨打）';
       deducedFabricName = '60S 兰精天丝莱赛尔双面微提花针织布';
-      deducedItemCode = 'ST-2026-TS60';
+      deducedItemCode = 'DEMO-TS60';
       deducedComp = '92% 兰精天丝(莱赛尔) 8% 锦纶';
       deducedWeight = '210';
       deducedWidth = '170';
@@ -365,13 +365,13 @@ export const SingleFabricAiExtractor: React.FC<SingleFabricAiExtractorProps> = (
       deducedMoq = '300';
       deducedLeadTime = '10-15天';
       deducedFunctions = '丝滑亲肤, 天然抑菌, 悬垂透气, 冰感舒适';
-    } else if (assetNames.includes('福泽') || assetNames.includes('棉') || assetNames.includes('斜纹')) {
-      deducedSupplier = '常州福泽针纺制品厂';
-      deducedShort = '福泽';
-      deducedContact = '周经理';
-      deducedPhone = '137-7512-8833';
+    } else if (assetNames.includes('样例03') || assetNames.includes('棉') || assetNames.includes('斜纹')) {
+      deducedSupplier = '示例供应商03（虚构）';
+      deducedShort = '样例03';
+      deducedContact = '示例联系人03';
+      deducedPhone = '示例号码（不可拨打）';
       deducedFabricName = '50S/2 双股精梳棉高密挺括斜纹布';
-      deducedItemCode = 'FZ-2026-CT50';
+      deducedItemCode = 'DEMO-CT50';
       deducedComp = '100% 长绒棉';
       deducedWeight = '245';
       deducedWidth = '150';
@@ -385,13 +385,13 @@ export const SingleFabricAiExtractor: React.FC<SingleFabricAiExtractorProps> = (
       deducedMoq = '600';
       deducedLeadTime = '20天';
       deducedFunctions = '纯棉透气, 骨感挺括, 经典斜纹肌理, 抗起球';
-    } else if (assetNames.includes('华宇') || assetNames.includes('冲锋') || assetNames.includes('尼龙')) {
-      deducedSupplier = '海宁华宇超纤新材料股份有限公司';
-      deducedShort = '华宇';
-      deducedContact = '王经理';
-      deducedPhone = '139-5731-6677';
+    } else if (assetNames.includes('样例11') || assetNames.includes('冲锋') || assetNames.includes('尼龙')) {
+      deducedSupplier = '示例供应商11（虚构）';
+      deducedShort = '样例11';
+      deducedContact = '示例联系人10';
+      deducedPhone = '示例号码（不可拨打）';
       deducedFabricName = '70D 哑光超泼水四面弹力冲锋衣复合面料';
-      deducedItemCode = 'HY-2026-WP70';
+      deducedItemCode = 'DEMO-WP70';
       deducedComp = '88% 锦纶 12% 氨纶';
       deducedWeight = '195';
       deducedWidth = '148';

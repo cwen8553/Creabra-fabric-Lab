@@ -25,9 +25,9 @@ export const SupplierSubmissionView: React.FC<SupplierSubmissionViewProps> = ({
   onAddNewFabric,
   onNavigateToInbox,
 }) => {
-  const [supplierName, setSupplierName] = useState('柯桥恒茂纺织科技有限公司');
-  const [contactName, setContactName] = useState('陈经理');
-  const [contactPhone, setContactPhone] = useState('138-5758-9921');
+  const [supplierName, setSupplierName] = useState('示例供应商02（虚构）');
+  const [contactName, setContactName] = useState('示例联系人02');
+  const [contactPhone, setContactPhone] = useState('示例号码（不可拨打）');
   const [fabricName, setFabricName] = useState('75D 莫代尔速干透气高弹平纹布');
   const [itemCode, setItemCode] = useState('HM-2025-MOD88');
   const [composition, setComposition] = useState('78% 兰精莫代尔 16% 涤纶 6% 氨纶');

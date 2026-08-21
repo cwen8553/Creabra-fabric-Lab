@@ -256,7 +256,7 @@ export const SuppliersView: React.FC<SuppliersViewProps> = ({
                               : 'bg-zinc-100 text-zinc-700 border border-zinc-200'
                           }`}
                         >
-                          {supplier.cooperationTier}
+                          样例关系 · {supplier.cooperationTier}
                         </span>
                       </div>
                       <h3 className="text-sm font-bold text-zinc-950 mt-2">{supplier.name}</h3>

@@ -115,6 +115,10 @@ export default function App() {
         conflictCount={conflictCount}
       />
 
+      <div className="shrink-0 border-b border-amber-200 bg-amber-50 px-4 py-1.5 text-center text-[11px] font-medium text-amber-900">
+        V1视觉参考 · 非上线系统 · 企业、联系人、电话与价格均为虚构样例 · 禁止录入真实资料
+      </div>
+
       {/* Main Workspace Frame */}
       <div className="flex-1 flex overflow-hidden min-h-0 relative">
         {/* Left Sidebar */}

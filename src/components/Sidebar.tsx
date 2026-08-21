@@ -157,7 +157,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </span>
           </div>
           <p className="text-[10px] text-zinc-500 leading-relaxed font-sans">
-            用于展示面料导入、核对、检索与匹配交互
+            非上线系统 · 禁止录入真实资料
           </p>
         </div>
       </div>
